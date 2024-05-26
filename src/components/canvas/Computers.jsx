@@ -1,46 +1,38 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Canvas, events } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = ({ isSmallScreen }) => {
   const computer = useGLTF("./gaming_desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.5} groundColor="black" />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={10}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={5} />
+      <hemisphereLight intensity={2} groundColor="#915eff" color="#cbb4ff" />
+      <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.4 : 0.7}
-        position={isMobile ? [-3, -3, -2.2] : [-3, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.2]}
+        scale={isSmallScreen ? 0.8 : 1.5}
+        position={isSmallScreen ? [-2, -1, -1] : [-10, -4, -5]}
+        rotation={isSmallScreen ? [0, -0.2, -0.2] : [0, 5.5, -0.2]}
       />
     </mesh>
   );
 };
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
     // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
+    // Set the initial value of the `isSmallScreen` state variable
+    setIsSmallScreen(mediaQuery.matches);
 
     // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+      setIsSmallScreen(event.matches);
     };
 
     // Add the callback function as a listener for changes to the media query
@@ -62,11 +54,12 @@ const ComputersCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         {/* allow to move left and right */}
         <OrbitControls
-          enableZoom={false}
+          enableZoom={true}
           maxPolarAngle={Math.PI / 2} //not rotate the object, only rotate in specifix axes
-          minPolarAngle={Math.PI / 2} //not rotate the object, only rotate in specifix axes
+          // minPolarAngle={Math.PI / 2} //not rotate the object, only rotate in specifix axes
         />
-        <Computers isMobile={isMobile} />
+        <Computers isSmallScreen={isSmallScreen} />
+        {/* <Asus isSmallScreen={isSmallScreen} /> */}
       </Suspense>
       <Preload all />
     </Canvas>

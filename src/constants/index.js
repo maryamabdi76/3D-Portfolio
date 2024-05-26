@@ -8,14 +8,12 @@ import {
   html,
   css,
   reactjs,
+  nextjs,
+  vuejs,
   redux,
+  jest,
   tailwind,
-  nodejs,
-  mongodb,
   git,
-  figma,
-  docker,
-  company,
   finalyst,
   tethermart,
   workmap,
@@ -83,8 +81,20 @@ const technologies = [
     icon: reactjs,
   },
   {
+    name: "Next JS",
+    icon: nextjs,
+  },
+  {
+    name: "Vue JS",
+    icon: vuejs,
+  },
+  {
     name: "Redux Toolkit",
     icon: redux,
+  },
+  {
+    name: "Jest",
+    icon: jest,
   },
   {
     name: "Tailwind CSS",
