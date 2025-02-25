@@ -1,0 +1,52 @@
+title: "3D Portfolio"
+description: "A modern, responsive 3D portfolio built using React, Vite, Three.js, Tailwind CSS, and React Router."
+baseurl: ""  # Leave blank if deploying to GitHub Pages root, else use "/repo-name"
+url: "https://maryamabdi76.github.io/3d_portfolio"  # Change this to your GitHub Pages URL
+
+# GitHub Pages settings
+theme: minima  # You can change the theme if needed
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Navigation
+nav:
+  - name: "Home"
+    link: "/"
+  - name: "About"
+    link: "/about"
+  - name: "Experience"
+    link: "/experience"
+  - name: "Works"
+    link: "/works"
+  - name: "Tech"
+    link: "/tech"
+  - name: "Feedbacks"
+    link: "/feedbacks"
+  - name: "Contact"
+    link: "/contact"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - node_modules
+  - .gitignore
+  - README.md
+  - package.json
+  - yarn.lock
+  - .vscode
+  - .github
+  - static
+  - build
+  - src
+  - dist
+
+# SEO settings
+author: "Maryam Abdi"
+github_username: "maryamabdi76"
+
+# Deployment settings (for GitHub Pages)
+repository: "maryamabdi76/3d_portfolio"
