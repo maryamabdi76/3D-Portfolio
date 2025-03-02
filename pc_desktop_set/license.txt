@@ -1,0 +1,11 @@
+Model Information:
+* title:	PC Desktop Set
+* source:	https://sketchfab.com/3d-models/pc-desktop-set-176a2feb82334f6196afe6bc50b62e22
+* author:	SabiqHasby (https://sketchfab.com/SabiqHasby)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PC Desktop Set" (https://sketchfab.com/3d-models/pc-desktop-set-176a2feb82334f6196afe6bc50b62e22) by SabiqHasby (https://sketchfab.com/SabiqHasby) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
