@@ -1,34 +1,35 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles.js";
-import { ComputersCanvas } from "./canvas";
+import { ComputersCanvas, LaptopCanvas, TriangleCanvas } from "./canvas";
+import { Text3D } from "@react-three/drei";
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
-        className={`absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+        className={`absolute inset-0 top-[90px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915eff]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
-        <div className="flex flex-wrap lg:flex-nowrap items-center justify-center">
-          <div>
-            <h1 className={`${styles.heroHeadText} text-white`}>
-              Hi, I'm <span className="text-[#915eff]">Maryam</span>
-            </h1>
-            <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-              I specialize in creating dynamic 3D visuals, <br />
-              user interfaces, <br />
-              and web applications with React.js, Next.js and Vue.js.
-            </p>
-          </div>
-          <div className="w-full h-80 lg:min-h-[50vh]">
-            <ComputersCanvas />
-          </div>
+        <div>
+          <h1 className={`${styles.heroHeadText} text-white`}>
+            Hi, I'm
+            <span className="text-[#915eff]"> Maryam</span>
+            {/* <Text3D>Maryam</Text3D> */}
+          </h1>
+          {/* <TriangleCanvas /> */}
+          <p className={`${styles.heroSubText} mt-1 text-white-100`}>
+            I specialize in creating dynamic 3D visuals, <br />
+            user interfaces, <br />
+            and web applications with React.js, Next.js and Vue.js.
+          </p>
         </div>
       </div>
+      <LaptopCanvas />
+      {/* <ComputersCanvas /> */}
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">

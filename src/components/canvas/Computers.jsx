@@ -12,9 +12,9 @@ const Computers = ({ isSmallScreen }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isSmallScreen ? 0.8 : 1.5}
-        position={isSmallScreen ? [-2, -1, -1] : [-10, -4, -5]}
-        rotation={isSmallScreen ? [0, -0.2, -0.2] : [0, 5.5, -0.2]}
+        scale={isSmallScreen ? 0.4 : 0.7}
+        position={isSmallScreen ? [0, -3, -1] : [0, -3.25, -1.5]}
+        rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
   );
