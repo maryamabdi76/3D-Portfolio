@@ -41,32 +41,35 @@ Follow these steps to set up the project locally:
 ### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/maryamabdi76/3d_portfolio.git
-    cd 3d-portfolio
-    ```
+
+   ```sh
+   git clone https://github.com/maryamabdi76/3D-Portfolio.git
+   cd 3d-portfolio
+   ```
 
 2. Install dependencies:
-    ```sh
-    npm install
-    # or
-    yarn install
-    ```
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
 
 ### Running the Project
 
 1. Start the development server:
-    ```sh
-    npm run dev
-    # or
-    yarn dev
-    ```
+
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   ```
 
 2. Open your browser and navigate to `http://localhost:5173`.
 
 ### Build for Production
 
 To create a production build:
+
 ```sh
 npm run build
 # or
