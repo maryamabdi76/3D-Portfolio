@@ -1,119 +1,147 @@
-# 3D Portfolio
+# Maryam Abdi — 3D Portfolio
 
-A modern, responsive 3D portfolio built using React, Vite, Three.js, Tailwind CSS, and React Router. This project showcases your skills, experience, and work in an interactive and visually appealing manner.
+A modern, interactive portfolio showcasing front-end engineering work with React, Three.js, and glassmorphism UI.
 
-## Table of Contents
-
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Components](#components)
-- [Contributing](#contributing)
-- [License](#license)
+**Live site:** [https://maryamabdi76.github.io/3D-Portfolio/](https://maryamabdi76.github.io/3D-Portfolio/)
 
 ## Features
 
-- **Interactive 3D Elements**: Utilize Three.js to create stunning 3D visuals and animations.
-- **Responsive Design**: Ensure a seamless experience across devices with Tailwind CSS.
-- **Smooth Navigation**: Implemented with React Router for client-side routing.
-- **Modern UI**: Clean and professional design with reusable React components.
+- **3D hero** — Animated MacBook laptop with LinkedIn profile on screen, floating wireframe shapes, and starfield background
+- **Glassmorphism UI** — Consistent glass cards, panels, and gradient accents across all sections
+- **Work experience timeline** — Expandable role cards with company logos and project highlights
+- **Project showcase** — Screenshot carousels, live demo links, and tech tags
+- **Tech stack grid** — Clean icon grid for languages, frameworks, and tools
+- **Education & contact** — Academic background, mailto contact form, and 3D Earth canvas
+- **Footer** — Resume download, social links, and back-to-top navigation
+- **Fully responsive** — Optimized for desktop and mobile
 
-## Technologies Used
+## Tech Stack
 
-- **React**: JavaScript library for building user interfaces.
-- **Vite**: Next generation frontend tooling.
-- **Three.js**: JavaScript 3D library for creating 3D graphics.
-- **@react-three/fiber**: React renderer for Three.js.
-- **@react-three/drei**: Useful helpers for @react-three/fiber.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **React Router**: Library for routing in React applications.
+| Category | Tools |
+|----------|-------|
+| Framework | React 18, Vite 5 |
+| 3D | Three.js, React Three Fiber, Drei |
+| Styling | Tailwind CSS, custom glass design system |
+| Animation | Framer Motion |
+| UI | React Vertical Timeline, React Tilt |
+| Routing | React Router |
+| Deploy | gh-pages |
 
 ## Getting Started
 
-Follow these steps to set up the project locally:
-
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
-1. Clone the repository:
+```sh
+git clone https://github.com/maryamabdi76/3D-Portfolio.git
+cd 3D-Portfolio
+npm install
+```
 
-   ```sh
-   git clone https://github.com/maryamabdi76/3D-Portfolio.git
-   cd 3d-portfolio
-   ```
+### Development
 
-2. Install dependencies:
-   ```sh
-   npm install
-   # or
-   yarn install
-   ```
+```sh
+npm run dev
+```
 
-### Running the Project
+Open [http://localhost:5173/3D-Portfolio/](http://localhost:5173/3D-Portfolio/) in your browser.
 
-1. Start the development server:
-
-   ```sh
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-2. Open your browser and navigate to `http://localhost:5173`.
-
-### Build for Production
-
-To create a production build:
+### Production build
 
 ```sh
 npm run build
-# or
-yarn build
+npm run preview
 ```
 
-## Usage
+## Deploy to GitHub Pages
 
-Customize the portfolio content by editing the respective components in the `./src/components` directory.
+The site auto-deploys on every push to **`master`** via [GitHub Actions](.github/workflows/deploy.yml).
 
-## Main Components
+1. Push your changes to `master`
+2. GitHub builds the project and publishes `dist/` to the **`gh-pages`** branch
+3. The live site updates in 1–2 minutes: [maryamabdi76.github.io/3D-Portfolio](https://maryamabdi76.github.io/3D-Portfolio/)
 
-### Navbar
+Check deployment status under the **Actions** tab in your repository.
 
-The navigation bar at the top of the page.
+### Manual deploy (optional)
 
-### Hero
+You can still deploy locally if needed:
 
-The hero section with a background pattern and introductory content.
+```sh
+npm run deploy
+```
 
-### About
+## Project Structure
 
-Information about yourself or the subject of the portfolio.
+```
+src/
+├── components/
+│   ├── canvas/       # 3D scenes (Laptop, Stars, Earth, FloatingShapes)
+│   ├── Hero.jsx
+│   ├── About.jsx
+│   ├── Experience.jsx
+│   ├── Tech.jsx
+│   ├── Works.jsx
+│   ├── Education.jsx
+│   ├── Contact.jsx
+│   ├── Footer.jsx
+│   └── Navbar.jsx
+├── constants/
+│   └── index.js      # Nav links, experience, projects, contact info
+├── assets/           # Images, logos, project screenshots
+└── index.css         # Glass UI design system
+public/
+├── Maryam_Abdi_Resume.pdf
+├── image.png         # Laptop screen + OG preview image
+└── mac-draco.glb     # 3D laptop model (via public or root)
+```
 
-### Experience
+## Customization
 
-Details about professional experience.
+Most portfolio content lives in **`src/constants/index.js`**:
 
-### Tech
+- `navLinks` — Navigation items
+- `profileTitle` — Job title used across the site
+- `services` — About section cards
+- `technologies` — Tech stack icons
+- `experiences` — Work history timeline
+- `projects` — Project cards with images and links
+- `contactInfo` — Email, phone, LinkedIn, GitHub, resume path
 
-Technologies and tools you work with.
+Replace screenshots in `src/assets/company/` and update `public/Maryam_Abdi_Resume.pdf` when your resume changes.
 
-### Works
+## Sections
 
-Showcase of your projects or portfolio items.
+| Section | Description |
+|---------|-------------|
+| **Hero** | Intro, CTA buttons (Projects, Resume, Contact), 3D laptop |
+| **About** | Bio and service overview cards |
+| **Experience** | Vertical timeline with expandable bullet points |
+| **Tech** | Technology grid |
+| **Projects** | Portfolio cards with live links |
+| **Education** | Master's and Bachelor's degrees |
+| **Contact** | Contact form and 3D Earth |
 
-### Feedbacks
+## Scripts
 
-Testimonials or feedback from clients or colleagues.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Create production build in `dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run deploy` | Build and publish to GitHub Pages |
+| `npm run lint` | Run ESLint |
 
-### Contact
+## Contact
 
-Contact form for visitors to reach out.
+- **Email:** maryamabdi9776@gmail.com
+- **LinkedIn:** [maryam-abdi-1b3a29140](https://ir.linkedin.com/in/maryam-abdi-1b3a29140)
+- **GitHub:** [maryamabdi76](https://github.com/maryamabdi76)
 
-### StarsCanvas
+## License
 
-Background animation using Three.js.
+This project is open source and available for personal portfolio use.
