@@ -4,6 +4,7 @@ import ComputersCanvas from "./Computers";
 import LaptopCanvas from "./Laptop";
 import StarsCanvas from "./Stars";
 import TriangleCanvas from "./Triangle";
+import FloatingShapesCanvas from "./FloatingShapes";
 
 export {
   EarthCanvas,
@@ -12,4 +13,5 @@ export {
   ComputersCanvas,
   LaptopCanvas,
   StarsCanvas,
+  FloatingShapesCanvas,
 };

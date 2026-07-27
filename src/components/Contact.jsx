@@ -32,16 +32,25 @@ const Contact = () => {
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] glass-card-wrap"
       >
+        <div className="glass-card p-8 h-full">
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText}>
+          Contact<span className="text-gradient">.</span>
+        </h3>
 
         <div className="mt-4 flex flex-col gap-2 text-secondary text-[15px]">
-          <a href={`mailto:${contactInfo.email}`} className="hover:text-white">
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="hover:text-[#915eff] transition-colors"
+          >
             {contactInfo.email}
           </a>
-          <a href={`tel:${contactInfo.phone}`} className="hover:text-white">
+          <a
+            href={`tel:${contactInfo.phone}`}
+            className="hover:text-[#915eff] transition-colors"
+          >
             {contactInfo.phone}
           </a>
           <p>{contactInfo.location}</p>
@@ -50,7 +59,7 @@ const Contact = () => {
               href={contactInfo.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#915eff] transition-colors"
             >
               LinkedIn
             </a>
@@ -58,7 +67,7 @@ const Contact = () => {
               href={contactInfo.github}
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#915eff] transition-colors"
             >
               GitHub
             </a>
@@ -74,7 +83,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="glass-input py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium"
               required
             />
           </label>
@@ -86,7 +95,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="glass-input py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium"
               required
             />
           </label>
@@ -98,25 +107,25 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What do you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="glass-input py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium resize-none"
               required
             />
           </label>
 
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl"
-          >
+          <button type="submit" className="btn-glow py-3 px-8 w-fit font-bold rounded-xl">
             Send
           </button>
         </form>
+        </div>
       </motion.div>
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] glass-card-wrap"
       >
-        <EarthCanvas />
+        <div className="glass-card h-full w-full overflow-hidden rounded-[19px]">
+          <EarthCanvas />
+        </div>
       </motion.div>
     </div>
   );

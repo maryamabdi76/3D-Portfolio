@@ -75,13 +75,13 @@ export const textVariant = (delay) => {
     };
   };
   
-  export const staggerContainer = (staggerChildren, delayChildren) => {
+export const staggerContainer = (staggerChildren = 0.15, delayChildren = 0) => {
     return {
       hidden: {},
       show: {
         transition: {
-          staggerChildren: staggerChildren,
-          delayChildren: delayChildren || 0,
+          staggerChildren,
+          delayChildren,
         },
       },
     };

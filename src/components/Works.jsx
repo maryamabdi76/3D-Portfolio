@@ -31,12 +31,13 @@ const ProjectCard = ({
   };
 
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="h-full">
       <Tilt
-        options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        options={{ max: 20, scale: 1.02, speed: 450 }}
+        className="glass-card-wrap h-full w-full"
       >
-        <div className="relative w-full aspect-[16/10] bg-black-100 rounded-2xl overflow-hidden">
+        <div className="glass-card p-5 h-full w-full flex flex-col">
+        <div className="relative w-full aspect-[16/10] shrink-0 glass-media rounded-2xl overflow-hidden">
           {images.map((img, imgIndex) => (
             <img
               key={`${name}-${imgIndex}`}
@@ -54,7 +55,7 @@ const ProjectCard = ({
                 type="button"
                 onClick={showPrev}
                 aria-label="Previous screenshot"
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80"
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full glass-btn text-white flex items-center justify-center"
               >
                 ‹
               </button>
@@ -62,7 +63,7 @@ const ProjectCard = ({
                 type="button"
                 onClick={showNext}
                 aria-label="Next screenshot"
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80"
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full glass-btn text-white flex items-center justify-center"
               >
                 ›
               </button>
@@ -89,7 +90,7 @@ const ProjectCard = ({
             <div className="absolute inset-0 flex justify-end m-3 card-img_hover pointer-events-none">
               <div
                 onClick={() => window.open(source_code_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer pointer-events-auto"
+                className="glass-btn w-10 h-10 rounded-full flex justify-center items-center cursor-pointer pointer-events-auto"
               >
                 <img
                   src={github}
@@ -101,28 +102,31 @@ const ProjectCard = ({
           ) : null}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-5 flex-1 flex flex-col">
           {project_link ? (
             <a
               href={project_link}
               target="_blank"
               rel="noreferrer"
-              className="text-white font-bold text-[24px] hover:text-[#915eff] transition-colors underline-offset-4 hover:underline"
+              className="text-white font-bold text-[24px] hover:text-[#915eff] transition-colors underline-offset-4 hover:underline line-clamp-1"
             >
               {name}
             </a>
           ) : (
-            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            <h3 className="text-white font-bold text-[24px] line-clamp-1">{name}</h3>
           )}
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className="mt-2 text-secondary text-[14px] leading-relaxed flex-1 min-h-[96px]">
+            {description}
+          </p>
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 min-h-[52px] content-start">
           {tags.map((tag) => (
             <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
+        </div>
         </div>
       </Tilt>
     </motion.div>
@@ -134,7 +138,9 @@ const Works = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <h2 className={styles.sectionHeadText}>
+          Projects<span className="text-gradient">.</span>
+        </h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -143,12 +149,12 @@ const Works = () => {
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Selected projects from my professional experience — spanning PWAs,
-          micro-frontends, workflow platforms, CMS-driven apps, and mobile
-          products built with React, Next.js, Vue, and React Native.
+          micro-frontends, workflow platforms, CMS-driven apps, and React Native
+          products built with React, Next.js, Vue, and TypeScript.
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 items-stretch">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

@@ -14,20 +14,18 @@ import {
 function App() {
   return (
     <BrowserRouter>
-      <div className="relativ z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <StarsCanvas />
+      <div className="relative z-10 bg-[#0c1024]/95">
+        <div className="relative overflow-hidden">
           <Navbar />
           <Hero />
         </div>
-      </div>
-      <About />
-      <Experience />
-      <Tech />
-      <Works />
-      <Feedbacks />
-      <div className="relative z-0">
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
         <Contact />
-        <StarsCanvas />
       </div>
     </BrowserRouter>
   );

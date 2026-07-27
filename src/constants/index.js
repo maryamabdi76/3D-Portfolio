@@ -110,7 +110,7 @@ const technologies = [
     icon: threejs,
   },
   {
-    name: 'git',
+    name: 'Git',
     icon: git,
   },
 ];
@@ -125,15 +125,17 @@ const experiences = [
     project: 'Digital Room, Home, Casie, Profile',
     projectUrl: '',
     points: [
-      'Digital Room — Built a Vue 3 Progressive Web App as a unified container for multi-team web applications, with iframe-based micro-frontend hosting and a dynamic tab system.',
-      'Digital Room — Implemented Gateway SSO authentication and secure postMessage communication; engineered URL state compression and browser history sync for deep linking; handled iOS Safari BFCache, safe-area, and PWA edge cases with a mobile-first RTL Tailwind UI.',
-      'Home — Built with Next.js 16, React 19, TypeScript, and Tailwind CSS; Gateway SSO; configurable homepage sections (service cards, carousels, banners, partners) driven by API data; admin drag-and-drop homepage builder.',
-      'Casie — Built a service and case management platform with Next.js 16, TypeScript, and React 19; Gateway SSO, SignalR real-time updates, internationalization, and admin features with shadcn/ui, TanStack Query, and React Hook Form.',
-      'Profile — Built a multilingual profile and workspace management app (Persian, English, Arabic) with Gateway SSO and a dynamic facet system for schema-driven forms using Radix UI and Tailwind CSS.',
+      'Digital Room — Built a Vue 3 PWA shell hosting independently deployed micro-frontends through sandboxed iframe architecture, with postMessage for navigation, authentication, and host integration.',
+      'Digital Room — Implemented gateway-based authentication with cookie sessions, JWT synchronization, and secure logout; optimized iframe lifecycle, lazy loading, and Safari mobile edge cases.',
+      'Home — Developed a configurable CMS-driven homepage platform using Next.js, React, TypeScript, and Tailwind CSS with an admin page builder for dynamic sections, banners, services, and content management.',
+      'Casie — Built a workflow management platform using Next.js 16, React 19, and TypeScript with feature-based architecture, dynamic BPM forms (React Hook Form + Zod), and AI-assisted reporting dashboards.',
+      'Casie — Integrated Gateway authentication and RBAC; built reusable UI with shadcn/ui and Radix UI; scaled API integration with TanStack Query and Axios.',
+      'Profile — Architected a feature-based profile and workspace app with Next.js App Router, schema-driven forms from backend metadata, TanStack Query, and Zustand.',
+      'Profile — Integrated interactive maps with geolocation and reverse geocoding, file management, and dynamic field rendering.',
     ],
   },
   {
-    title: 'Mobile And Web React Native',
+    title: 'React Native Developer',
     company_name: 'Teanab',
     icon: finalyst,
     iconBg: '#0099ad',
@@ -141,9 +143,9 @@ const experiences = [
     project: 'Finalyst',
     projectUrl: 'https://app.finalyst.co',
     points: [
-      'Developed an optimized codebase to streamline interaction between native code and web-based chart files, ensuring seamless performance.',
-      'Implemented a real-time notification system using Expo Notifications, improving user engagement.',
-      'Exported web and PWA builds with React Native Web, significantly reducing development time and effort.',
+      'Developed cross-platform mobile applications using React Native and Expo.',
+      'Shared business logic between mobile and web using React Native Web.',
+      'Implemented real-time notifications and optimized application performance.',
     ],
   },
   {
@@ -155,9 +157,9 @@ const experiences = [
     project: 'TetherMart',
     projectUrl: 'https://TetherMart.co',
     points: [
-      'Developed both the web platform and Admin Panel, enabling efficient management of users, transactions, and platform settings.',
-      'Enhanced user experience with Material-UI, improving engagement and usability.',
-      'Optimized performance and scalability using Next.js and server-side rendering (SSR).',
+      'Developed customer-facing platform and administration panel using Next.js.',
+      'Built reusable UI components with Material UI.',
+      'Improved scalability using SSR and modular architecture.',
     ],
   },
   {
@@ -169,8 +171,8 @@ const experiences = [
     project: 'PushX',
     projectUrl: 'https://PushX.com',
     points: [
-      'Enhanced the Admin Panel using React.js and Ant Design, improving the user interface and experience for administrators.',
-      'Streamlined venue, event, and brand management, enhancing platform performance and scalability.',
+      'Developed administration features using React and Ant Design, improving event, venue, and brand management workflows.',
+      'Refactored reusable UI components for better maintainability.',
     ],
   },
   {
@@ -208,7 +210,7 @@ const projects = [
   {
     name: 'Digital Room',
     description:
-      'Web PWA (Vue 3) app shell for Tehran Digital Chamber — hosts multi-team micro-frontends in sandboxed iframes with gateway SSO, postMessage bridge, lazy iframe tabs, and mobile-first RTL chrome.',
+      'Vue 3 PWA app container hosting independently deployed micro-frontends through sandboxed iframes, with gateway authentication, postMessage integration, lazy loading, and Safari mobile optimizations.',
     tags: [
       { name: 'vue3', color: 'blue-text-gradient' },
       { name: 'pwa', color: 'green-text-gradient' },
@@ -223,7 +225,7 @@ const projects = [
   {
     name: 'Casie',
     description:
-      'Service and case management platform (Next.js 16 / React 19) with Gateway auth, Camunda BPM forms, SignalR chat, Chart.js + AI analysis, Workbox PWA, and trilingual i18n.',
+      'Workflow management platform built with Next.js 16, React 19, and TypeScript — feature-based architecture, schema-driven BPM forms, reporting dashboards, AI-assisted chart analysis, and real-time collaboration with Gateway RBAC.',
     tags: [
       { name: 'nextjs', color: 'blue-text-gradient' },
       { name: 'react19', color: 'green-text-gradient' },
@@ -239,7 +241,7 @@ const projects = [
   {
     name: 'Home',
     description:
-      'Feature-based Next.js 16 homepage portal with Gateway SSO, drag-and-drop admin CMS builder, nested services, MinIO files, Workbox PWA, and MizBunny iframe embedding.',
+      'Configurable CMS-driven homepage platform using Next.js, React, TypeScript, and Tailwind CSS — admin page builder, dynamic sections and banners, PWA support, and embedded app integration via postMessage.',
     tags: [
       { name: 'nextjs', color: 'blue-text-gradient' },
       { name: 'typescript', color: 'green-text-gradient' },
@@ -255,7 +257,7 @@ const projects = [
   {
     name: 'Profile',
     description:
-      'Multilingual profile & workspace app with schema-driven facet forms (RHF + Zod), Neshan maps, file pipeline, Gateway cookie SSO, and Workbox offline PWA.',
+      'Feature-based profile and workspace management app with Next.js App Router — schema-driven forms from backend metadata, interactive maps with geolocation, file management, TanStack Query, and Zustand.',
     tags: [
       { name: 'nextjs', color: 'blue-text-gradient' },
       { name: 'typescript', color: 'green-text-gradient' },
@@ -271,7 +273,7 @@ const projects = [
   {
     name: 'TetherMart',
     description:
-      'Crypto trading web platform and Admin Panel with Next.js SSR, Material-UI, and modular architecture for users, transactions, and settings.',
+      'Customer-facing platform and admin panel built with Next.js, Material UI reusable components, SSR, and modular architecture.',
     tags: [
       { name: 'nextjs', color: 'blue-text-gradient' },
       { name: 'material-ui', color: 'green-text-gradient' },
