@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { services } from '../constants';
+import { services, profileTitle } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { SectionWrapper } from '../hoc';
 
@@ -41,7 +41,7 @@ const About = () => {
         variants={fadeIn('', 'tween', 0.1, 0.5)}
         className="mt-4 text-[#c4bfe0] text-[17px] leading-[30px] max-w-3xl"
       >
-        Senior Front-End Engineer with 6+ years of experience building
+        {profileTitle} with 6+ years of experience building
         scalable web applications using React, Next.js, and TypeScript.
         <br />
         Experienced in designing frontend architecture, reusable UI systems,

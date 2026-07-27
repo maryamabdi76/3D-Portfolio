@@ -1,27 +1,36 @@
+import { useState } from 'react';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+} from 'react-vertical-timeline-component';
 
-import "react-vertical-timeline-component/style.min.css";
-import { styles } from "../styles";
-import { experiences } from "../constants";
-import { SectionWrapper } from "../hoc";
+import 'react-vertical-timeline-component/style.min.css';
+import { styles } from '../styles';
+import { experiences } from '../constants';
+import { SectionWrapper } from '../hoc';
+
+const VISIBLE_POINTS = 3;
 
 const ExperienceCard = ({ experience }) => {
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = experience.points.length > VISIBLE_POINTS;
+  const visiblePoints = expanded
+    ? experience.points
+    : experience.points.slice(0, VISIBLE_POINTS);
+
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "rgba(22, 18, 50, 0.65)",
-        backdropFilter: "blur(18px)",
-        WebkitBackdropFilter: "blur(18px)",
-        color: "#fff",
-        border: "1px solid rgba(145, 94, 255, 0.22)",
-        borderRadius: "16px",
+        background: 'rgba(22, 18, 50, 0.65)',
+        backdropFilter: 'blur(18px)',
+        WebkitBackdropFilter: 'blur(18px)',
+        color: '#fff',
+        border: '1px solid rgba(145, 94, 255, 0.22)',
+        borderRadius: '16px',
         boxShadow:
-          "inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 8px 32px rgba(0, 0, 0, 0.35)",
+          'inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 8px 32px rgba(0, 0, 0, 0.35)',
       }}
-      contentArrowStyle={{ borderRight: "7px solid rgba(22, 18, 50, 0.65)" }}
+      contentArrowStyle={{ borderRight: '7px solid rgba(22, 18, 50, 0.65)' }}
       dateClassName="!text-white !font-semibold !opacity-100"
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
@@ -47,13 +56,15 @@ const ExperienceCard = ({ experience }) => {
             {experience.project}
           </a>
         ) : (
-          <p className="text-[#dfd9ff] text-[14px] m-0 font-medium">{experience.project}</p>
+          <p className="text-[#dfd9ff] text-[14px] m-0 font-medium">
+            {experience.project}
+          </p>
         )}
         <p className="text-[#c4bfe0] text-[16px] font-semibold m-0 mt-1">
           {experience.company_name}
         </p>
         <ul className="mt-5 list-disc ml-5 space-y-2">
-          {experience.points.map((point, index) => (
+          {visiblePoints.map((point, index) => (
             <li
               key={`experience-point-${index}`}
               className="text-[#e8e6f0] text-[14px] pl-1 tracking-wide leading-relaxed"
@@ -62,6 +73,17 @@ const ExperienceCard = ({ experience }) => {
             </li>
           ))}
         </ul>
+        {hasMore ? (
+          <button
+            type="button"
+            onClick={() => setExpanded((current) => !current)}
+            className="mt-4 text-[#915eff] hover:text-[#b08aff] text-[14px] font-semibold transition-colors"
+          >
+            {expanded
+              ? 'Show less'
+              : `Show ${experience.points.length - VISIBLE_POINTS} more`}
+          </button>
+        ) : null}
       </div>
     </VerticalTimelineElement>
   );
@@ -90,4 +112,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, 'experience');

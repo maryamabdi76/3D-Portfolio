@@ -137,8 +137,8 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>
+        <p className={`${styles.sectionSubText} !text-[#c4bfe0]`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} !text-white`}>
           Projects<span className="text-gradient">.</span>
         </h2>
       </motion.div>
@@ -146,7 +146,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-[#c4bfe0] text-[17px] max-w-3xl leading-[30px]"
         >
           Selected projects from my professional experience — spanning PWAs,
           micro-frontends, workflow platforms, CMS-driven apps, and React Native

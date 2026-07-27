@@ -36,14 +36,24 @@ export const navLinks = [
     title: 'About',
   },
   {
-    id: 'work',
-    title: 'Work',
+    id: 'experience',
+    title: 'Experience',
+  },
+  {
+    id: 'projects',
+    title: 'Projects',
+  },
+  {
+    id: 'tech',
+    title: 'Tech',
   },
   {
     id: 'contact',
     title: 'Contact',
   },
 ];
+
+export const profileTitle = 'Senior Front-End Engineer';
 
 const services = [
   {
@@ -306,6 +316,7 @@ const contactInfo = {
   location: 'Tehran, Iran',
   linkedin: 'https://ir.linkedin.com/in/maryam-abdi-1b3a29140',
   github: 'https://github.com/maryamabdi76',
+  resume: `${import.meta.env.BASE_URL}Maryam_Abdi_Resume.pdf`,
 };
 
 export { services, technologies, experiences, projects, contactInfo };

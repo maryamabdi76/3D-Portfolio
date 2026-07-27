@@ -160,7 +160,7 @@ const LaptopCanvas = () => {
     <div className="canvas-container laptop-canvas w-full h-full absolute inset-0 z-0">
       <Canvas
         shadows
-        camera={{ position: [-5, 0, -19], fov: 52, near: 0.1, far: 100 }}
+        camera={{ position: [-5, 0, -12], fov: 52, near: 0.1, far: 100 }}
         dpr={[1, 2]}
         gl={{
           antialias: true,
@@ -195,7 +195,11 @@ const LaptopCanvas = () => {
         <pointLight position={[-8, 4, -6]} intensity={0.35} color="#56ccf2" />
 
         <Suspense fallback={<CanvasLoader />}>
-          <group rotation={[0, Math.PI, 0]} position={[0, -0.6, 0]} scale={0.72}>
+          <group
+            rotation={[0, Math.PI, 0]}
+            position={[0, -0.6, 0]}
+            scale={0.72}
+          >
             <Model />
           </group>
           <Environment preset="city" background={false} />

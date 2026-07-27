@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { styles } from '../styles.js';
+import { contactInfo, profileTitle } from '../constants';
 import { LaptopCanvas, FloatingShapesCanvas } from './canvas';
 
 const Hero = () => {
@@ -40,12 +41,38 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.7 }}
               className={`${styles.heroSubText} mt-3 text-white-100`}
             >
-              Senior Front-End Engineer with 6+ years of experience.{' '}
-              <br className="sm:block hidden" />
-              I build scalable web apps, PWAs, and reusable UI systems{' '}
-              <br className="sm:block hidden" />
+              {profileTitle} with 6+ years of experience.{' '}
+              <br className="sm:block hidden" />I build scalable web apps, PWAs,
+              and reusable UI systems <br className="sm:block hidden" />
               with React, Next.js, TypeScript, and Vue.js.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.7 }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              <a
+                href="#projects"
+                className="btn-glow py-3 px-6 rounded-xl text-[14px] font-semibold"
+              >
+                View Projects
+              </a>
+              <a
+                href={contactInfo.resume}
+                download
+                className="glass-btn py-3 px-6 rounded-xl text-[14px] text-white font-semibold"
+              >
+                Download Resume
+              </a>
+              <a
+                href="#contact"
+                className="glass-btn py-3 px-6 rounded-xl text-[14px] text-white font-semibold"
+              >
+                Contact Me
+              </a>
+            </motion.div>
           </div>
         </motion.div>
 

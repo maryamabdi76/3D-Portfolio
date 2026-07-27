@@ -2,8 +2,9 @@ import { BrowserRouter } from "react-router-dom";
 import {
   About,
   Contact,
+  Education,
   Experience,
-  Feedbacks,
+  Footer,
   Hero,
   Navbar,
   Tech,
@@ -24,8 +25,9 @@ function App() {
         <Experience />
         <Tech />
         <Works />
-        <Feedbacks />
+        <Education />
         <Contact />
+        <Footer />
       </div>
     </BrowserRouter>
   );

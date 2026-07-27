@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { logo, menu, close } from "../assets";
-import { navLinks } from "../constants";
+import { navLinks, profileTitle } from "../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -35,11 +35,11 @@ const Navbar = () => {
           <p className="text-white text-[18px] flex font-bold cursor-pointer">
             Maryam Abdi &nbsp;
             <span className="sm:block hidden text-secondary">
-              | Senior Front-End Developer
+              | {profileTitle}
             </span>
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <li
               key={link.id}
