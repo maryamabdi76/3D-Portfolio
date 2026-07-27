@@ -29,8 +29,16 @@ const ExperienceCard = ({ experience }) => {
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <a href={experience.projectUrl} target="_blank">{experience.project}</a>
-        <p className="text-secondary text-[16px] font-semibold m-0">{experience.company_name}</p>
+        {experience.projectUrl ? (
+          <a href={experience.projectUrl} target="_blank" rel="noreferrer">
+            {experience.project}
+          </a>
+        ) : (
+          <p className="text-white text-[14px] m-0">{experience.project}</p>
+        )}
+        <p className="text-secondary text-[16px] font-semibold m-0">
+          {experience.company_name}
+        </p>
         <ul className="mt-5 list-disc ml-5 space-y-2">
           {experience.points.map((point, index)=>(
             <li
@@ -48,7 +56,7 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant}>
+      <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience.</h2>
       </motion.div>

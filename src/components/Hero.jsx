@@ -22,9 +22,9 @@ const Hero = () => {
           </h1>
           {/* <TriangleCanvas /> */}
           <p className={`${styles.heroSubText} mt-1 text-white-100`}>
-            I specialize in creating dynamic 3D visuals, <br />
-            user interfaces, <br />
-            and web applications with React.js, Next.js and Vue.js.
+            Senior Front-End Developer with 6+ years of experience. <br />
+            I build scalable web apps, PWAs, and reusable UI systems <br />
+            with React, Next.js, TypeScript, and Vue.js.
           </p>
         </div>
       </div>

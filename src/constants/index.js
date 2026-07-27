@@ -14,267 +14,296 @@ import {
   jest,
   tailwind,
   git,
+  digitalchamber,
+  digitalroom,
+  casie,
+  home,
+  profile,
   finalyst,
   tethermart,
+  tethermartApp,
   workmap,
+  workmapApp,
+  workmapApp2,
   pushx,
   himart,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
-} from "../assets";
+} from '../assets';
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: 'about',
+    title: 'About',
   },
   {
-    id: "work",
-    title: "Work",
+    id: 'work',
+    title: 'Work',
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: 'contact',
+    title: 'Contact',
   },
 ];
 
 const services = [
   {
-    title: "Web Developer",
+    title: 'Front-End Architecture',
     icon: web,
   },
   {
-    title: "React Developer",
+    title: 'React / Next.js',
     icon: backend,
   },
   {
-    title: "React Native Developer",
+    title: 'React Native',
     icon: mobile,
   },
   {
-    title: "Content Creator",
+    title: 'PWA & Micro-frontends',
     icon: creator,
   },
 ];
 
 const technologies = [
   {
-    name: "HTML 5",
+    name: 'HTML 5',
     icon: html,
   },
   {
-    name: "CSS 3",
+    name: 'CSS 3',
     icon: css,
   },
   {
-    name: "JavaScript",
+    name: 'JavaScript',
     icon: javascript,
   },
   {
-    name: "TypeScript",
+    name: 'TypeScript',
     icon: typescript,
   },
   {
-    name: "React JS",
+    name: 'React JS',
     icon: reactjs,
   },
   {
-    name: "Next JS",
+    name: 'Next JS',
     icon: nextjs,
   },
   {
-    name: "Vue JS",
+    name: 'Vue JS',
     icon: vuejs,
   },
   {
-    name: "Redux Toolkit",
+    name: 'Redux Toolkit',
     icon: redux,
   },
   {
-    name: "Jest",
+    name: 'Jest',
     icon: jest,
   },
   {
-    name: "Tailwind CSS",
+    name: 'Tailwind CSS',
     icon: tailwind,
   },
   {
-    name: "Three JS",
+    name: 'Three JS',
     icon: threejs,
   },
   {
-    name: "git",
+    name: 'git',
     icon: git,
   },
 ];
 
 const experiences = [
   {
-    title: "Mobile And Web React Native",
-    company_name: "Teanab(Tehran)",
+    title: 'Front-End Developer',
+    company_name: 'Tehran Chamber of Commerce',
+    icon: digitalchamber,
+    iconBg: '#FFFFFF',
+    date: 'Jun 2024 - Present',
+    project: 'Digital Room, Home, Casie, Profile',
+    projectUrl: '',
+    points: [
+      'Digital Room — Built a Vue 3 Progressive Web App as a unified container for multi-team web applications, with iframe-based micro-frontend hosting and a dynamic tab system.',
+      'Digital Room — Implemented Gateway SSO authentication and secure postMessage communication; engineered URL state compression and browser history sync for deep linking; handled iOS Safari BFCache, safe-area, and PWA edge cases with a mobile-first RTL Tailwind UI.',
+      'Home — Built with Next.js 16, React 19, TypeScript, and Tailwind CSS; Gateway SSO; configurable homepage sections (service cards, carousels, banners, partners) driven by API data; admin drag-and-drop homepage builder.',
+      'Casie — Built a service and case management platform with Next.js 16, TypeScript, and React 19; Gateway SSO, SignalR real-time updates, internationalization, and admin features with shadcn/ui, TanStack Query, and React Hook Form.',
+      'Profile — Built a multilingual profile and workspace management app (Persian, English, Arabic) with Gateway SSO and a dynamic facet system for schema-driven forms using Radix UI and Tailwind CSS.',
+    ],
+  },
+  {
+    title: 'Mobile And Web React Native',
+    company_name: 'Teanab',
     icon: finalyst,
-    iconBg: "#0099ad",
-    date: "Dec 2023 - Present",
-    project: "Finalyst.co",
-    projectUrl: "https://app.finalyst.co",
+    iconBg: '#0099ad',
+    date: 'Dec 2023 - Jun 2024',
+    project: 'Finalyst',
+    projectUrl: 'https://app.finalyst.co',
     points: [
-      "Designed an efficient codebase to make interaction between native code of app and Web-Based files of the chart performant and seamless. (Memory usage improved by 60%.)",
-      "Implemented Notifications using Expo Notifications service. Exported Web and PWA Builds using React-Native-Web. Saving up to 4 months of additional programming.",
+      'Developed an optimized codebase to streamline interaction between native code and web-based chart files, ensuring seamless performance.',
+      'Implemented a real-time notification system using Expo Notifications, improving user engagement.',
+      'Exported web and PWA builds with React Native Web, significantly reducing development time and effort.',
     ],
   },
   {
-    title: "Front-end Developer",
-    company_name: "Teanab(Tehran)",
+    title: 'Front-End Developer',
+    company_name: 'Teanab',
     icon: tethermart,
-    iconBg: "#0099ad",
-    date: "May 2023 - Present",
-    project: "TetherMart.co",
-    projectUrl: "https://TetherMart.co",
+    iconBg: '#0099ad',
+    date: 'May 2023 - Dec 2023',
+    project: 'TetherMart',
+    projectUrl: 'https://TetherMart.co',
     points: [
-      "Enhanced user experience at TetherMart by implementing over 20 design elements using Material-UI (MUI), leading to a 15% increase in user engagement. Leveraged proficiency in Next.js for efficient server-side rendering, achieving a 50%",
-      "improvement in page load times and a 20% increase in user satisfaction scores. Integrated advanced web technologies, achieving a 40% reduction in load times and enhancing responsiveness across devices, significantly improving the scalability and performance of applications.",
-      "Built TetherPal, a mobile project focused on Tether to Iranian Rial (IRT) trading, utilizing Next.js for fast loading speeds, achieving a 30% faster load time compared to previous versions, though not currently live.",
+      'Developed both the web platform and Admin Panel, enabling efficient management of users, transactions, and platform settings.',
+      'Enhanced user experience with Material-UI, improving engagement and usability.',
+      'Optimized performance and scalability using Next.js and server-side rendering (SSR).',
     ],
   },
   {
-    title: "Front-end Developer",
-    company_name: "Teanab(Tehran)",
+    title: 'Front-End Developer',
+    company_name: 'Teanab',
     icon: pushx,
-    iconBg: "#383E56",
-    date: "Dec 2022 - May 2023",
-    project: "PushX.com",
-    projectUrl: "https://PushX.com",
+    iconBg: '#383E56',
+    date: 'Dec 2022 - Dec 2023',
+    project: 'PushX',
+    projectUrl: 'https://PushX.com',
     points: [
-      "Optimized the PushX Admin Panel by leveraging React.js and Ant Design, significantly boosting UI and UX for administrators by 20%.",
-      "This strategic integration not only streamlined the management of venues, events, and brands but also enhanced the platform's overall performance and scalability, achieving a 30% improvement.",
+      'Enhanced the Admin Panel using React.js and Ant Design, improving the user interface and experience for administrators.',
+      'Streamlined venue, event, and brand management, enhancing platform performance and scalability.',
     ],
   },
   {
-    title: "Front-end Developer",
-    company_name: "Hyperoffice(US)",
+    title: 'Front-End Developer',
+    company_name: 'Hyperoffice | Remote, US',
     icon: workmap,
-    iconBg: "#ffffff",
-    date: "Jan 2021 - Aug 2022",
-    project: "WorkMap.ai",
-    projectUrl: "https://WorkMap.ai",
+    iconBg: '#ffffff',
+    date: 'Jan 2021 - Aug 2022',
+    project: 'WorkMap',
+    projectUrl: 'https://WorkMap.ai',
     points: [
-      "Developed on WorkMap.ai's web-based relational database management system by implementing ag-Grid and Ant Design in React.js, significantly optimizing data management capabilities.",
-      "Managed the team through more than 10 successful releases, introducing approximately 10 innovative features and resolving over 350 critical bugs.",
-      "Worked closely with the backend team and the marketing team in the US to introduce new advanced features, ensuring seamless integration and functionality.",
-      "Restructured large portions of the old codebase into new, clean, and readable code, achieving file size reductions of up to 90% in some instances.",
-      "Boosted the loading performance of large Ag-Grid database tables by 200% through the implementation of server-side pagination and data lazy loading techniques, significantly improving user experience and system efficiency.",
+      'Developed key features for a web-based relational database system using React.js, ag-Grid, Ant Design, and Redux, improving data management.',
+      'Led multiple successful releases, introducing new features and resolving critical issues.',
+      'Refactored a significant portion of the legacy codebase into clean, modular components, improving maintainability.',
+      'Optimized large ag-Grid tables with server-side pagination and lazy loading, enhancing loading performance.',
     ],
   },
   {
-    title: "Front-end Developer",
-    company_name: "Himart(Tehran)",
+    title: 'Front-End Developer',
+    company_name: 'HiMart | Tehran, Iran',
     icon: himart,
-    iconBg: "#ffffff",
-    date: "May 2020 - Jan 2021",
-    project: "Himart.ir",
-    projectUrl: "https://Himart.ir",
+    iconBg: '#ffffff',
+    date: 'May 2020 - Jan 2021',
+    project: 'Himart.ir',
+    projectUrl: 'https://Himart.ir',
     points: [
-      "Optimized the Himart Admin Panel by leveraging Vue.js and CoreUI, significantly improving its functionality and user interface by 40%.",
-      "Designed and implemented a user-friendly dashboard, enhancing user experience and efficiency in managing platform features by 35%.",
-      "Focused on implementing secure and compliant design practices, ensuring the protection of the platform's data and user information, with a 50% increase in security measures.",
-      "Supported Himart's growth by providing administrators with a powerful and intuitive tool for effective platform management, boosting productivity by 25%.",
+      'Developed and optimized the Admin Panel using Vue.js and CoreUI, enhancing functionality and user experience.',
+      'Designed an intuitive dashboard, improving efficiency in platform management for administrators.',
+      'Implemented security best practices to strengthen platform protection and compliance.',
     ],
-  },
-];
-
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "Car Rent",
+    name: 'Digital Room',
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      'Web PWA (Vue 3) app shell for Tehran Digital Chamber — hosts multi-team micro-frontends in sandboxed iframes with gateway SSO, postMessage bridge, lazy iframe tabs, and mobile-first RTL chrome.',
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
+      { name: 'vue3', color: 'blue-text-gradient' },
+      { name: 'pwa', color: 'green-text-gradient' },
+      { name: 'micro-frontends', color: 'pink-text-gradient' },
+      { name: 'tailwind', color: 'blue-text-gradient' },
+      { name: 'gateway-sso', color: 'green-text-gradient' },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    images: [digitalroom],
+    project_link: 'https://app.digitalchamber.ir',
+    source_code_link: '',
   },
   {
-    name: "Job IT",
+    name: 'Casie',
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      'Service and case management platform (Next.js 16 / React 19) with Gateway auth, Camunda BPM forms, SignalR chat, Chart.js + AI analysis, Workbox PWA, and trilingual i18n.',
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
+      { name: 'nextjs', color: 'blue-text-gradient' },
+      { name: 'react19', color: 'green-text-gradient' },
+      { name: 'typescript', color: 'pink-text-gradient' },
+      { name: 'shadcn/ui', color: 'blue-text-gradient' },
+      { name: 'tanstack-query', color: 'green-text-gradient' },
+      { name: 'signalr', color: 'pink-text-gradient' },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    images: [casie],
+    project_link: 'https://casie.digitalchamber.ir',
+    source_code_link: '',
   },
   {
-    name: "Trip Guide",
+    name: 'Home',
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      'Feature-based Next.js 16 homepage portal with Gateway SSO, drag-and-drop admin CMS builder, nested services, MinIO files, Workbox PWA, and MizBunny iframe embedding.',
     tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      { name: 'nextjs', color: 'blue-text-gradient' },
+      { name: 'typescript', color: 'green-text-gradient' },
+      { name: 'shadcn/ui', color: 'pink-text-gradient' },
+      { name: 'zustand', color: 'blue-text-gradient' },
+      { name: 'tanstack-query', color: 'green-text-gradient' },
+      { name: 'pwa', color: 'pink-text-gradient' },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    images: [home],
+    project_link: 'https://home.digitalchamber.ir',
+    source_code_link: '',
+  },
+  {
+    name: 'Profile',
+    description:
+      'Multilingual profile & workspace app with schema-driven facet forms (RHF + Zod), Neshan maps, file pipeline, Gateway cookie SSO, and Workbox offline PWA.',
+    tags: [
+      { name: 'nextjs', color: 'blue-text-gradient' },
+      { name: 'typescript', color: 'green-text-gradient' },
+      { name: 'react-hook-form', color: 'pink-text-gradient' },
+      { name: 'zod', color: 'blue-text-gradient' },
+      { name: 'tanstack-query', color: 'green-text-gradient' },
+      { name: 'next-intl', color: 'pink-text-gradient' },
+    ],
+    images: [profile],
+    project_link: 'https://profile.digitalchamber.ir',
+    source_code_link: '',
+  },
+  {
+    name: 'TetherMart',
+    description:
+      'Crypto trading web platform and Admin Panel with Next.js SSR, Material-UI, and modular architecture for users, transactions, and settings.',
+    tags: [
+      { name: 'nextjs', color: 'blue-text-gradient' },
+      { name: 'material-ui', color: 'green-text-gradient' },
+      { name: 'ssr', color: 'pink-text-gradient' },
+      { name: 'typescript', color: 'blue-text-gradient' },
+    ],
+    images: [tethermartApp],
+    project_link: 'https://tethermart.co',
+    source_code_link: '',
+  },
+  {
+    name: 'WorkMap',
+    description:
+      'Web-based relational database platform with React, ag-Grid, Ant Design, and Redux — server-side pagination, lazy loading, and large-scale legacy refactors.',
+    tags: [
+      { name: 'react', color: 'blue-text-gradient' },
+      { name: 'ag-grid', color: 'green-text-gradient' },
+      { name: 'antd', color: 'pink-text-gradient' },
+      { name: 'redux', color: 'blue-text-gradient' },
+    ],
+    images: [workmapApp, workmapApp2],
+    project_link: 'https://app.workmap.ai',
+    source_code_link: '',
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const contactInfo = {
+  email: 'maryamabdi9776@gmail.com',
+  phone: '+98-9912013220',
+  location: 'Tehran, Iran',
+  linkedin: 'https://ir.linkedin.com/in/maryam-abdi-1b3a29140',
+  github: 'https://github.com/maryamabdi76',
+};
+
+export { services, technologies, experiences, projects, contactInfo };

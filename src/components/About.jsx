@@ -34,7 +34,7 @@ const About = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Intorduction</p>
+        <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
@@ -42,26 +42,18 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] leading-[30px]"
       >
-        I am a seasoned Frontend Developer with over 4 years of hands-on
-        experience, specializing in React, Next.js, and Vue.js. Throughout my
-        career, I have successfully delivered over 5 user-centric web
-        applications, consistently exceeding client expectations and meeting
-        project deadlines.
+        Senior Front-End Engineer with 6+ years of experience building scalable
+        web applications using React, Next.js, and TypeScript. Experienced in
+        designing frontend architecture, reusable UI systems, authentication
+        flows, Progressive Web Apps, and enterprise-scale applications.
         <br />
-        In addition to my technical skills, I am proficient in utilizing
-        effective project management tools such as Jira. This allows me to
-        ensure smooth project execution, maintain clear communication channels
-        with stakeholders, and uphold high coding standards.
+        I work across feature-based architectures, micro-frontends, PWAs, SSR,
+        and Nx monorepos — with strong fluency in TanStack Query, Zustand,
+        Redux, Tailwind CSS, shadcn/ui, and schema-driven forms with React Hook
+        Form and Zod.
         <br />
-        I take pride in producing clean, well-documented code that not only
-        meets functional requirements but also contributes to the overall
-        efficiency and scalability of web applications. My dedication to
-        excellence has led to positive feedback from clients and team members
-        alike.
-        <br />I am passionate about staying updated with the latest trends and
-        best practices in frontend development, continuously honing my skills to
-        deliver cutting-edge solutions. I am eager to leverage my expertise and
-        contribute to innovative projects at Teanab.
+        Passionate about building maintainable software, improving developer
+        experience, and delivering high-performance user interfaces.
       </motion.p>
 
       <div className="justify-center mt-20 flex flex-wrap gap-10">
