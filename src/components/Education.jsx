@@ -21,8 +21,8 @@ const education = [
 
 const EducationCard = ({ index, degree, school, date, location }) => (
   <motion.div
-    variants={fadeIn('up', 'spring', index * 0.5, 0.75)}
-    className="glass-card-wrap xs:w-[360px] w-full"
+    variants={fadeIn('up', 'tween', 0, 0.5)}
+    className="glass-card-wrap xs:w-[360px] w-full card-lift"
   >
     <div className="glass-card p-10 h-full">
       <p className="text-white font-bold text-[20px]">{degree}</p>

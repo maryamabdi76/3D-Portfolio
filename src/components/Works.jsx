@@ -31,10 +31,13 @@ const ProjectCard = ({
   };
 
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="h-full">
+    <motion.div
+      variants={fadeIn("up", "tween", 0, 0.5)}
+      className="h-full"
+    >
       <Tilt
-        options={{ max: 20, scale: 1.02, speed: 450 }}
-        className="glass-card-wrap h-full w-full"
+        options={{ max: 8, scale: 1.015, speed: 600 }}
+        className="glass-card-wrap h-full w-full card-lift"
       >
         <div className="glass-card p-5 h-full w-full flex flex-col">
         <div className="relative w-full aspect-[16/10] shrink-0 glass-media rounded-2xl overflow-hidden">
@@ -145,7 +148,7 @@ const Works = () => {
 
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeIn("", "tween", 0, 0.5)}
           className="mt-3 text-[#c4bfe0] text-[17px] max-w-3xl leading-[30px]"
         >
           Selected work across products I have shipped — including my personal

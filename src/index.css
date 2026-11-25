@@ -130,25 +130,74 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .glass-btn:hover {
   background: rgba(145, 94, 255, 0.25);
   border-color: rgba(145, 94, 255, 0.4);
+  transform: translateY(-1px);
 }
 
 .btn-glow {
   background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
   color: #fff;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1), filter 0.3s ease;
   box-shadow: 0 8px 24px rgba(109, 40, 217, 0.28);
 }
 
 .btn-glow:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   filter: brightness(1.06);
-  box-shadow: 0 10px 28px rgba(109, 40, 217, 0.38);
+  box-shadow: 0 12px 32px rgba(109, 40, 217, 0.4);
+}
+
+.btn-glow:active {
+  transform: translateY(0);
+}
+
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-soft,
+  .card-lift,
+  .btn-glow,
+  .glass-btn,
+  .service-card {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card-lift:hover,
+  .btn-glow:hover,
+  .service-card:hover {
+    transform: none !important;
+  }
 }
 
 .text-gradient {

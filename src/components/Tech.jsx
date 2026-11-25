@@ -6,14 +6,14 @@ import { styles } from "../styles";
 import { technologies } from "../constants";
 import { fadeIn } from "../utils/motion";
 
-const TechCard = ({ technology, index }) => (
+const TechCard = ({ technology }) => (
   <Tilt
-    options={{ max: 20, scale: 1.04, speed: 400 }}
+    options={{ max: 10, scale: 1.02, speed: 550 }}
     className="w-full"
   >
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.04, 0.5)}
-      className="glass-card-wrap group w-full"
+      variants={fadeIn("up", "tween", 0, 0.4)}
+      className="glass-card-wrap group w-full card-lift"
     >
       <div className="glass-card flex flex-col items-center justify-center gap-3 p-5 min-h-[130px]">
         <div className="tech-icon-bg flex items-center justify-center w-16 h-16 rounded-2xl transition-colors duration-300">
@@ -37,7 +37,10 @@ const Tech = () => {
     <div className="relative">
       <div className="tech-section-glow pointer-events-none" aria-hidden="true" />
 
-      <div className="relative z-10 mb-12">
+      <motion.div
+        variants={fadeIn("", "tween", 0, 0.5)}
+        className="relative z-10 mb-12"
+      >
         <p className={`${styles.sectionSubText} !text-[#c4bfe0]`}>
           What I work with
         </p>
@@ -49,15 +52,11 @@ const Tech = () => {
           feature-based design, micro-frontends, PWA, SSR, Nx monorepos, TanStack
           Query, Zustand, Redux, shadcn/ui, Radix UI, React Hook Form, and Zod.
         </p>
-      </div>
+      </motion.div>
 
       <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
-        {technologies.map((technology, index) => (
-          <TechCard
-            key={technology.name}
-            technology={technology}
-            index={index}
-          />
+        {technologies.map((technology) => (
+          <TechCard key={technology.name} technology={technology} />
         ))}
       </div>
     </div>

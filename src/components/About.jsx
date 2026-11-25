@@ -8,8 +8,8 @@ import { SectionWrapper } from '../hoc';
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <motion.div
-      variants={fadeIn('up', 'tween', index * 0.08, 0.4)}
-      className="glass-card-wrap w-[250px] service-card"
+      variants={fadeIn('up', 'tween', 0, 0.45)}
+      className="glass-card-wrap w-[250px] service-card card-lift"
     >
       <div className="glass-card-perf py-8 px-10 min-h-[280px] flex justify-evenly items-center flex-col group">
         <div className="glass-icon-ring flex items-center justify-center w-20 h-20 rounded-2xl mb-2">
@@ -38,7 +38,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn('', 'tween', 0.1, 0.5)}
+        variants={fadeIn('', 'tween', 0, 0.5)}
         className="mt-4 text-[#c4bfe0] text-[17px] leading-[30px] max-w-3xl"
       >
         {profileTitle} with 6+ years of experience building

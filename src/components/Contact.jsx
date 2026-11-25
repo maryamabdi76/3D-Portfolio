@@ -41,7 +41,7 @@ const Contact = () => {
 
       <div className="mt-10 xl:mt-14 grid xl:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] gap-6 xl:gap-10 items-start">
         <motion.div
-          variants={fadeIn('right', 'tween', 0.15, 0.85)}
+          variants={fadeIn('right', 'tween', 0, 0.6)}
           className="relative order-2 xl:order-1 xl:sticky xl:top-28"
         >
           <div className="relative aspect-square w-full max-w-[400px] mx-auto">
@@ -50,7 +50,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          variants={fadeIn('left', 'tween', 0.2, 0.85)}
+          variants={fadeIn('left', 'tween', 0, 0.6)}
           className="order-1 xl:order-2"
         >
           <p className="text-[#c4bfe0] text-[16px] sm:text-[17px] leading-relaxed max-w-lg">

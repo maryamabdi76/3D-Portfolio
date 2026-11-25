@@ -45,7 +45,7 @@ const Navbar = () => {
               key={link.id}
               className={`${
                 active === link.title ? "text-white" : "text-secondary"
-              } hover:text-[#915eff] text-[18px] transition-colors duration-200 cursor-pointer`}
+              } hover:text-[#915eff] text-[18px] transition-colors duration-300 cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
@@ -62,7 +62,12 @@ const Navbar = () => {
           />
           <motion.div
             initial={false}
-            animate={toggle ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            animate={
+              toggle
+                ? { opacity: 1, x: 0, scale: 1 }
+                : { opacity: 0, x: 16, scale: 0.98 }
+            }
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             className={`${
               !toggle ? "hidden" : "flex"
             } glass-panel p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
