@@ -27,6 +27,7 @@ import {
   workmapApp2,
   pushx,
   himart,
+  momentia,
   threejs,
 } from '../assets';
 
@@ -217,6 +218,22 @@ const experiences = [
 ];
 
 const projects = [
+  {
+    name: 'Momentia',
+    description:
+      'Personal product: turn a meaningful night into a printable star poster. Computes the real sky from date + place in the browser — stars, Moon phase, planets — with Persian RTL UI, Jalali calendar, free/premium PNG & SVG export, and card-to-card checkout.',
+    tags: [
+      { name: 'nextjs', color: 'blue-text-gradient' },
+      { name: 'typescript', color: 'green-text-gradient' },
+      { name: 'tailwind', color: 'pink-text-gradient' },
+      { name: 'next-intl', color: 'blue-text-gradient' },
+      { name: 'gsap', color: 'green-text-gradient' },
+      { name: 'astronomy', color: 'pink-text-gradient' },
+    ],
+    images: [momentia],
+    project_link: 'https://momentiaa.vercel.app/',
+    source_code_link: 'https://github.com/maryamabdi76/Momentia',
+  },
   {
     name: 'Digital Room',
     description:

@@ -32,9 +32,9 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="w-28 h-9 object-contain" />
-          <p className="text-white text-[18px] flex font-bold cursor-pointer">
+          <p className="font-display text-white text-[17px] flex font-semibold cursor-pointer tracking-tight">
             Maryam Abdi &nbsp;
-            <span className="sm:block hidden text-secondary">
+            <span className="sm:block hidden text-secondary font-sans font-normal text-[15px]">
               | {profileTitle}
             </span>
           </p>

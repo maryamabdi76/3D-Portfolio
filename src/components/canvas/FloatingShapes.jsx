@@ -1,28 +1,35 @@
-import { useRef, Suspense } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sparkles } from "@react-three/drei";
-import * as THREE from "three";
+import { useRef, Suspense } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Float } from '@react-three/drei';
+import * as THREE from 'three';
 
-const Shape = ({ geometry, position, color, wireframe = true, scale = 1, speed = 1 }) => {
+const Shape = ({
+  geometry,
+  position,
+  color,
+  scale = 1,
+  speed = 1,
+  opacity = 0.22,
+}) => {
   const ref = useRef();
 
   useFrame((state) => {
     const t = state.clock.elapsedTime * speed;
-    ref.current.rotation.x = t * 0.35;
-    ref.current.rotation.y = t * 0.55;
+    ref.current.rotation.x = t * 0.18;
+    ref.current.rotation.y = t * 0.28;
   });
 
   return (
-    <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1.5}>
+    <Float speed={1.2} rotationIntensity={0.35} floatIntensity={0.8}>
       <mesh ref={ref} position={position} scale={scale}>
         {geometry}
         <meshStandardMaterial
           color={color}
-          wireframe={wireframe}
+          wireframe
           transparent
-          opacity={wireframe ? 0.35 : 0.12}
+          opacity={opacity}
           emissive={color}
-          emissiveIntensity={0.4}
+          emissiveIntensity={0.25}
         />
       </mesh>
     </Float>
@@ -36,58 +43,45 @@ const Scene = () => {
     const { x, y } = state.pointer;
     groupRef.current.rotation.y = THREE.MathUtils.lerp(
       groupRef.current.rotation.y,
-      x * 0.15,
-      0.05
+      x * 0.08,
+      0.04,
     );
     groupRef.current.rotation.x = THREE.MathUtils.lerp(
       groupRef.current.rotation.x,
-      y * 0.08,
-      0.05
+      y * 0.04,
+      0.04,
     );
   });
 
   return (
     <group ref={groupRef}>
-      <ambientLight intensity={0.4} />
-      <pointLight position={[10, 10, 10]} intensity={1.2} color="#915eff" />
-      <pointLight position={[-10, -5, -5]} intensity={0.6} color="#00cea8" />
+      <ambientLight intensity={0.35} />
+      <pointLight position={[8, 6, 8]} intensity={0.7} color="#915eff" />
+      <pointLight position={[-8, -4, -4]} intensity={0.35} color="#00cea8" />
 
       <Shape
-        geometry={<torusGeometry args={[1, 0.35, 16, 48]} />}
-        position={[-4, 1.5, -2]}
+        geometry={<torusGeometry args={[1.1, 0.28, 12, 48]} />}
+        position={[-4.2, 1.6, -3]}
         color="#915eff"
-        scale={0.9}
-        speed={0.8}
-      />
-      <Shape
-        geometry={<octahedronGeometry args={[1.2, 0]} />}
-        position={[4.5, -0.5, -3]}
-        color="#00cea8"
         scale={0.85}
-        speed={1.1}
+        speed={0.55}
+        opacity={0.2}
       />
       <Shape
-        geometry={<icosahedronGeometry args={[1, 1]} />}
-        position={[2, 2.5, -4]}
-        color="#56ccf2"
+        geometry={<octahedronGeometry args={[1.15, 0]} />}
+        position={[4.8, -0.8, -3.5]}
+        color="#00cea8"
         scale={0.7}
-        speed={0.9}
+        speed={0.7}
+        opacity={0.16}
       />
       <Shape
-        geometry={<dodecahedronGeometry args={[0.9, 0]} />}
-        position={[-3, -1.5, -3.5]}
-        color="#bf61ff"
-        scale={0.75}
-        speed={1.2}
-      />
-
-      <Sparkles
-        count={80}
-        scale={12}
-        size={2}
-        speed={0.4}
-        opacity={0.6}
-        color="#915eff"
+        geometry={<icosahedronGeometry args={[1, 0]} />}
+        position={[2.4, 2.4, -5]}
+        color="#56ccf2"
+        scale={0.55}
+        speed={0.6}
+        opacity={0.14}
       />
     </group>
   );
@@ -95,8 +89,8 @@ const Scene = () => {
 
 const FloatingShapesCanvas = () => {
   return (
-    <div className="canvas-container absolute inset-0 z-0">
-      <Canvas camera={{ position: [0, 0, 6], fov: 45 }} dpr={[1, 1.5]}>
+    <div className="canvas-container absolute inset-0 z-0 pointer-events-none opacity-70">
+      <Canvas camera={{ position: [0, 0, 6], fov: 42 }} dpr={[1, 1.25]}>
         <Suspense fallback={null}>
           <Scene />
         </Suspense>

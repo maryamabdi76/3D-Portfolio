@@ -148,9 +148,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-[#c4bfe0] text-[17px] max-w-3xl leading-[30px]"
         >
-          Selected projects from my professional experience — spanning PWAs,
-          micro-frontends, workflow platforms, CMS-driven apps, and React Native
-          products built with React, Next.js, Vue, and TypeScript.
+          Selected work across products I have shipped — including my personal
+          project Momentia — plus PWAs, micro-frontends, workflow platforms, and
+          CMS-driven apps built with React, Next.js, Vue, and TypeScript.
         </motion.p>
       </div>
 

@@ -4,6 +4,10 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Outfit", "sans-serif"],
+        display: ["Syne", "Outfit", "sans-serif"],
+      },
       colors: {
         primary: "#050816",
         secondary: "#aaa6c3",

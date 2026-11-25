@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,9 +8,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Outfit", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+}
+
+.font-display {
+  font-family: "Syne", "Outfit", sans-serif;
 }
 
 body {
@@ -135,15 +139,16 @@ body {
 }
 
 .btn-glow {
-  background: linear-gradient(135deg, #915eff 0%, #6b3fd4 100%);
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
   color: #fff;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 20px rgba(145, 94, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.28);
 }
 
 .btn-glow:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(145, 94, 255, 0.5);
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 28px rgba(109, 40, 217, 0.38);
 }
 
 .text-gradient {

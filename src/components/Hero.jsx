@@ -5,98 +5,122 @@ import { LaptopCanvas, FloatingShapesCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className="relative w-full min-h-screen xl:h-screen mx-auto overflow-hidden">
+    <section className="relative w-full min-h-screen mx-auto overflow-hidden">
       <FloatingShapesCanvas />
 
-      <div className="hero-glow absolute top-1/4 -left-32 w-96 h-96 rounded-full blur-[120px] opacity-40 pointer-events-none" />
-      <div className="hero-glow-teal absolute bottom-1/4 -right-32 w-80 h-80 rounded-full blur-[100px] opacity-30 pointer-events-none" />
+      <div className="hero-glow absolute top-[18%] -left-40 w-[28rem] h-[28rem] rounded-full blur-[140px] opacity-30 pointer-events-none" />
+      <div className="hero-glow-teal absolute bottom-[12%] -right-36 w-[22rem] h-[22rem] rounded-full blur-[120px] opacity-20 pointer-events-none" />
 
       <div
-        className={`relative z-10 max-w-7xl mx-auto flex xl:flex-row flex-col items-center gap-8 xl:gap-10 px-6 sm:px-16 pt-24 sm:pt-28 xl:pt-[90px] pb-20 sm:pb-24`}
+        className={`relative z-10 max-w-7xl mx-auto grid xl:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] items-center gap-10 xl:gap-6 ${styles.paddingX} pt-28 sm:pt-32 xl:pt-28 pb-24 xl:pb-16 xl:min-h-screen`}
       >
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="flex flex-row items-start gap-4 sm:gap-5 flex-1 w-full"
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-start w-full max-w-2xl"
         >
-          <div className="flex flex-col justify-center items-center mt-5">
-            <div className="w-5 h-5 rounded-full bg-[#915eff] shadow-glow" />
-            <div className="w-1 sm:h-80 h-40 violet-gradient" />
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.55 }}
+            className="font-display text-[13px] sm:text-[14px] tracking-[0.22em] uppercase text-[#9d96c7]"
+          >
+            {profileTitle}
+          </motion.p>
 
-          <div className="glass-panel p-5 sm:p-8 rounded-2xl max-w-xl w-full">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className={`${styles.heroHeadText} text-white`}
-            >
-              Hi, I'm
-              <span className="text-gradient"> Maryam</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.7 }}
-              className={`${styles.heroSubText} mt-3 text-white-100`}
-            >
-              {profileTitle} with 6+ years of experience.{' '}
-              <br className="sm:block hidden" />I build scalable web apps, PWAs,
-              and reusable UI systems <br className="sm:block hidden" />
-              with React, Next.js, TypeScript, and Vue.js.
-            </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18, duration: 0.7 }}
+            className="font-display font-semibold text-white mt-4 text-[42px] xs:text-[52px] sm:text-[64px] lg:text-[76px] leading-[1.05] tracking-[-0.03em]"
+          >
+            Maryam
+            <span className="text-gradient"> Abdi</span>
+          </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.55, duration: 0.7 }}
-              className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-3"
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.32, duration: 0.65 }}
+            className="mt-5 sm:mt-6 text-[#c9c3e6] text-[16px] sm:text-[18px] lg:text-[20px] leading-[1.65] max-w-xl"
+          >
+            I design and ship scalable interfaces — PWAs, micro-frontends, and
+            reusable UI systems — with React, Next.js, TypeScript, and Vue.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.65 }}
+            className="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-4"
+          >
+            <a
+              href="#projects"
+              className="btn-glow py-3.5 px-7 rounded-full text-[14px] font-semibold tracking-wide"
             >
-              <a
-                href="#projects"
-                className="btn-glow py-3 px-6 rounded-xl text-[14px] font-semibold text-center"
-              >
-                View Projects
-              </a>
-              <a
-                href={contactInfo.resume}
-                download
-                className="glass-btn py-3 px-6 rounded-xl text-[14px] text-white font-semibold text-center"
-              >
-                Download Resume
-              </a>
-              <a
-                href="#contact"
-                className="glass-btn py-3 px-6 rounded-xl text-[14px] text-white font-semibold text-center"
-              >
-                Contact Me
-              </a>
-            </motion.div>
-          </div>
+              View Projects
+            </a>
+            <a
+              href={contactInfo.resume}
+              download
+              className="glass-btn py-3.5 px-7 rounded-full text-[14px] text-white font-medium tracking-wide"
+            >
+              Download Resume
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="mt-10 sm:mt-12 flex items-center gap-6 text-[13px] text-[#8f88b5]"
+          >
+            <span className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-teal" />
+              6+ years
+            </span>
+            <span className="w-px h-3 bg-white/15" />
+            <span>Tehran · Remote</span>
+            <span className="w-px h-3 bg-white/15 hidden sm:block" />
+            <a
+              href="#contact"
+              className="hidden sm:inline hover:text-white transition-colors"
+            >
+              Let&apos;s talk →
+            </a>
+          </motion.div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.9 }}
-          className="xl:flex-1 xl:h-[min(58vh,600px)] h-[28vh] sm:h-[38vh] w-full max-w-2xl mx-auto relative overflow-hidden"
+          transition={{ delay: 0.25, duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="relative w-full h-[32vh] sm:h-[42vh] xl:h-[min(62vh,640px)] max-w-2xl mx-auto xl:mx-0"
         >
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(145,94,255,0.18)_0%,transparent_65%)] pointer-events-none" />
           <LaptopCanvas />
         </motion.div>
       </div>
 
-      <div className="absolute bottom-10 w-full hidden sm:flex justify-center items-center z-10">
-        <a href="#about" aria-label="Scroll to about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary/50 flex justify-center items-start p-2 backdrop-blur-sm">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex z-10">
+        <a
+          href="#about"
+          aria-label="Scroll to about"
+          className="group flex flex-col items-center gap-2 text-[#8f88b5] hover:text-white transition-colors"
+        >
+          <span className="text-[11px] tracking-[0.2em] uppercase font-medium">
+            Scroll
+          </span>
+          <div className="w-[22px] h-[36px] rounded-full border border-white/25 group-hover:border-accent/60 flex justify-center items-start pt-1.5 transition-colors">
             <motion.div
-              animate={{ y: [0, 24, 0] }}
+              animate={{ y: [0, 10, 0], opacity: [1, 0.4, 1] }}
               transition={{
-                duration: 1.5,
+                duration: 1.8,
                 repeat: Infinity,
-                repeatType: 'loop',
+                ease: 'easeInOut',
               }}
-              className="w-3 h-3 rounded-full bg-[#915eff] mb-1 shadow-glow"
+              className="w-1 h-1.5 rounded-full bg-accent"
             />
           </div>
         </a>

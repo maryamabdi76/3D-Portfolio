@@ -34,6 +34,7 @@ import workmap from "./company/workmap.png";
 import workmapApp from "./company/workmap-app.png";
 import workmapApp2 from "./company/workmap-app-2.png";
 import himart from "./company/himart.jpg";
+import momentia from "./company/momentia.jpg";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -74,6 +75,7 @@ export {
   workmapApp,
   workmapApp2,
   himart,
+  momentia,
   carrent,
   jobit,
   tripguide,
